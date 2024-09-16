@@ -4,18 +4,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        String word = "Aston";
+        int num = 6;
         printThreeWords ();
         checkSumSign ();
         printColor ();
         compareNumbers ();
         metod1 ();
-        metod2 ();
-        metod3 ();
-        metod4 ();
+        metod2 (8);
+        metod3 (-6);
+        metod4 (word, num);
         metod5 ();
         metod6 ();
         metod7 ();
         metod8 ();
+        metod9 ();
+        metod10 ();
     }
 
     static void printThreeWords () {
@@ -42,11 +46,9 @@ public class Main {
         System.out.println();
         System.out.println("ЗАДАНИЕ №3:");
         int value = 8;
-        if (value < 0) {
+        if (value <= 0) {
             System.out.println("Красный");
-        } else if (0 <= value) {
-            System.out.println("Желтый");
-        } else if (0 > 100) {
+        } else if (0 < value & value <= 100) {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
@@ -65,7 +67,6 @@ public class Main {
         }
     }
 
-
    static void metod1 () {
        System.out.println();
         System.out.println("ЗАДАНИЕ №5:");
@@ -79,13 +80,10 @@ public class Main {
            System.out.println("Результат: " + b);
    }
 
-    static void metod2 () {
+    static void metod2 (int res) {
         System.out.println();
         System.out.println("ЗАДАНИЕ №6:");
 
-        Scanner scanner = new Scanner(System.in);
-            System.out.print("Введите число:");
-        int res = scanner.nextInt();
         if (res >= 0) {
             System.out.println("Число " + res + " положительное");
         } else {
@@ -93,39 +91,25 @@ public class Main {
         }
     }
 
-    static void metod3 () {
+    static boolean metod3 (int res) {
         System.out.println();
         System.out.println("ЗАДАНИЕ №7:");
 
-        boolean a = true;
-        boolean b = false;
-        Scanner scanner = new Scanner(System.in);
-            System.out.print("Введите число:");
-        int res = scanner.nextInt();
-        if (res >= 0) {
-            System.out.print("Результат: " + b);
-        } else {
-            System.out.println("Результат: " + a);
-        }
+        return res < 0;
     }
 
-    static void metod4 () {
+    static void metod4 (String word, int num) {
         System.out.println();
         System.out.println();
         System.out.println("ЗАДАНИЕ №8:");
 
-        Scanner Scanner = new Scanner(System.in);
-            System.out.print("Введите слово: ");
-
-        String word = Scanner.nextLine();
-            System.out.print("Введите число: ");
-
-        int num = Scanner.nextInt();
-        String repeated = word.repeat(num);
-            System.out.println(repeated);
+        for (int i  = 0; i < num; i++) {
+            System.out.print(word + " , ");
+        }
     }
 
     static void metod5 () {
+        System.out.println();
         System.out.println();
         System.out.println("ЗАДАНИЕ №9:");
 
@@ -141,16 +125,16 @@ public class Main {
         System.out.println("ЗАДАНИЕ №10:");
 
         int[] arr = {0, 1, 1, 0, 1, 1, 0, 0, 0, 1};
-            System.out.println(Arrays.toString(arr));
-        for (int i = 0; i <= 9; i++) {
+        System.out.println(Arrays.toString(arr));
+
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] == 0) {
                 arr[i] = 1;
-            } else if (arr[i] == 1) {
+            } else {
                 arr[i] = 0;
             }
-            System.out.println(Arrays.toString(arr));
         }
-        // Как вывести одной строкой замененный массив не нашел
+        System.out.println(Arrays.toString(arr));
     }
 
     static void metod7 () {
@@ -158,7 +142,7 @@ public class Main {
         System.out.println("ЗАДАНИЕ №11:");
 
         int[] arr = new int[100];
-        for (int i = 0; i < 100; i++) {
+        for (int i = 1; i < arr.length; i++) {
             arr[i] = i;
             System.out.print(i + " ");
         }
@@ -172,10 +156,75 @@ public class Main {
         int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
             System.out.println(Arrays.toString(arr));
             System.out.println("Результат:");
-        for (int i = 0; i <= 11; i++) {
+
+        boolean firstElement = true;
+
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] < 6) {
-                System.out.print(arr[i] * 2 + ", ");
+                if (!firstElement) {
+                    System.out.print(", ");
+                }
+
+                System.out.print(arr[i] * 2);
+                firstElement = false;
             }
+        }
+    }
+
+    static void metod9 () {
+        System.out.println();
+        System.out.println();
+        System.out.println("ЗАДАНИЕ №13:");
+    int num1 = 5;
+    int num2 = 5;
+    int[][] arr = new int[num1][num2];
+
+    int value = 1;
+
+        for (int i = 0; i < 0; i++) {
+        for (int j = 0; j < 0; j++) {
+            arr[i][j] = value++;
+        }
+    }
+
+        arr [0][0] = 1;
+        arr [2][4] = 1;
+        arr [0][4] = 1;
+        arr [1][1] = 1;
+        arr [1][3] = 1;
+        arr [2][2] = 1;
+        arr [3][1] = 1;
+        arr [3][3] = 1;
+        arr [4][0] = 1;
+        arr [4][4] = 1;
+
+        for (int i = 0; i < arr.length; i++) {
+        for (int j = 0; j < arr[i].length; j++) {
+            System.out.printf("%3d", arr[i][j]);
+        }
+            System.out.println();
+        }
+    }
+
+    static void metod10 () {
+        System.out.println();
+        System.out.println("ЗАДАНИЕ №14:");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите длину массива:");
+        int len = scanner.nextInt();
+
+        System.out.print("Введите число:");
+        int initialValue = scanner.nextInt();
+
+        int [] arr = new int [len];
+        for (int i = 0; i < len; i++) {
+            arr[i] = initialValue;
+
+        }
+        for (int i = 0; i < len; i++) {
+            System.out.print(arr[i] + " ");
         }
     }
 }
