@@ -6,13 +6,15 @@ public class Main {
     public static void main(String[] args) {
         String word = "Aston";
         int num = 6;
+
         printThreeWords ();
         checkSumSign ();
         printColor ();
         compareNumbers ();
         metod1 ();
         metod2 (8);
-        metod3 (-6);
+        boolean metod3 = metod3 (-6);
+        System.out.println(metod3);
         metod4 (word, num);
         metod5 ();
         metod6 ();
@@ -23,6 +25,7 @@ public class Main {
     }
 
     static void printThreeWords () {
+        System.out.println();
         System.out.println("ЗАДАНИЕ №1:");
         System.out.println("Orange");
         System.out.println("Banana");
@@ -48,7 +51,7 @@ public class Main {
         int value = 8;
         if (value <= 0) {
             System.out.println("Красный");
-        } else if (0 < value & value <= 100) {
+        } else if (0 < value && value <= 100) {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
@@ -142,9 +145,9 @@ public class Main {
         System.out.println("ЗАДАНИЕ №11:");
 
         int[] arr = new int[100];
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = i;
-            System.out.print(i + " ");
+            System.out.print(i + 1 + " ");
         }
     }
 
@@ -175,33 +178,19 @@ public class Main {
         System.out.println();
         System.out.println();
         System.out.println("ЗАДАНИЕ №13:");
-    int num1 = 5;
-    int num2 = 5;
-    int[][] arr = new int[num1][num2];
 
-    int value = 1;
+        int n = 5;
+        int[][] arr = new int[n][n];
 
-        for (int i = 0; i < 0; i++) {
-        for (int j = 0; j < 0; j++) {
-            arr[i][j] = value++;
+        for (int i = 0; i < n; i++) {
+            arr[i][i] = 1;
+            arr[i][n - i - 1] = 1;
         }
-    }
 
-        arr [0][0] = 1;
-        arr [2][4] = 1;
-        arr [0][4] = 1;
-        arr [1][1] = 1;
-        arr [1][3] = 1;
-        arr [2][2] = 1;
-        arr [3][1] = 1;
-        arr [3][3] = 1;
-        arr [4][0] = 1;
-        arr [4][4] = 1;
-
-        for (int i = 0; i < arr.length; i++) {
-        for (int j = 0; j < arr[i].length; j++) {
-            System.out.printf("%3d", arr[i][j]);
-        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
             System.out.println();
         }
     }
