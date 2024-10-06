@@ -24,10 +24,5 @@ public class Main {
         for (Person person : persarr)
             person.printinfo();
 
-        System.out.println();
-        System.out.println("Задание 3:");
-
-        Park park = new Park("Колесо обозрения", "с 9.00-22.00", "5 рублей");
-        park.someinfo3();
     }
 }
