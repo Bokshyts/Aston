@@ -3,20 +3,19 @@ package org.example;
 public class Park {
     class Attraction {
         private String name;
-        private String grafic;
-        private double stoimost;
+        private String timeWork;
+        private double price;
 
-        public Attraction(String name, String grafic, double stoimost) {
+        public Attraction(String name, String timeWork, double price) {
             this.name = name;
-            this.grafic = grafic;
-            this.stoimost = stoimost;
+            this.timeWork = timeWork;
+            this.price = price;
         }
 
-        public void someinfo1() {
+        public void printInfo2() {
             System.out.println("Аттракцион: " + name);
-            System.out.println("Режим работы: " + grafic);
-            System.out.println("Стоимость: " + stoimost + " руб.");
-            System.out.println();
+            System.out.println("Режим работы: " + timeWork);
+            System.out.println("Стоимость: " + price + " руб.");
         }
     }
 }

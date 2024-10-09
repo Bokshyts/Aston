@@ -1,23 +1,23 @@
 package org.example;
 
 public class Person {
-    String name;
-    String doljnost;
-    String email;
-    String phone;
-    String zarplata;
-    String age;
+    private String name;
+    private String position;
+    private String email;
+    private int phone;
+    private double salary;
+    private int age;
 
-    public Person(String _name, String _doljnost, String _email, String _phone, String _zarplata, String _age){
-        name = _name;
-        doljnost = _doljnost;
-        email = _email;
-        phone = _phone;
-        zarplata = _zarplata;
-        age = _age;
+    public Person(String name, String position, String email, int phone, double salary, int age){
+        this.name = name;
+        this.position = position;
+        this.email = email;
+        this.phone = phone;
+        this.salary = salary;
+        this.age = age;
     }
 
-    public void printinfo(){
-        System.out.println("ФИО: " + name + "   Должность: " + doljnost + "   Email: " + email + "   Телефон: " + phone + "   Зарплата: " + zarplata + "   Возраст: " + age);
+    public void printInfo(){
+        System.out.println("ФИО: " + name + "\n" + "Должность: " + position + "\n" + "Email: " + email + "\n" + "Телефон: " + phone + "\n" + "Зарплата: " + salary + "\n" + "Возраст: " + age + "\n");
     }
 }

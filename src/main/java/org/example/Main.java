@@ -8,21 +8,28 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задание 1:");
-        Sotrudnik sotrudnik = new Sotrudnik();
-        sotrudnik.someinfo();
+        Person person1 = new Person("Бокшиц Олег", "QA Engineer", "o.bokshyts@gmail.com", 6237902, 320000.36, 29);
+        person1.printInfo();
 
         System.out.println();
         System.out.println("Задание 2:");
 
         Person [] persarr = new Person[5];
-        persarr [0] = new Person ("Иван Иванов", "Менеджер", "ivanov@mail.ru", "3689582", "635000.00", "26");
-        persarr [1] = new Person ("Сергей Сергеев", "Уборщик", "sergeev@mail.ru", "6927136", "30000.35", "48");
-        persarr [2] = new Person ("Вячеслав Вячеславов", "Водитель", "Vyacheslavov@mail.ru", "32649832", "120000.99", "35");
-        persarr [3] = new Person ("Виктор Викторов", "Директор", "victorov@mail.ru", "32469731", "1236000.00", "50");
-        persarr [4] = new Person ("Леонид Леонидов", "Секретарь", "leonidov@mail.ru", "1384628", "128000.00", "36");
+        persarr [0] = new Person ("Иван Иванов", "Менеджер", "ivanov@mail.ru", 3689582, 635000.00, 26);
+        persarr [1] = new Person ("Сергей Сергеев", "Уборщик", "sergeev@mail.ru", 6927136, 30000.35, 48);
+        persarr [2] = new Person ("Вячеслав Вячеславов", "Водитель", "Vyacheslavov@mail.ru", 32649832, 120000.99, 35);
+        persarr [3] = new Person ("Виктор Викторов", "Директор", "victorov@mail.ru", 32469731, 1236000.00, 50);
+        persarr [4] = new Person ("Леонид Леонидов", "Секретарь", "leonidov@mail.ru", 1384628, 128000.00, 36);
 
         for (Person person : persarr)
-            person.printinfo();
+            person.printInfo();
 
+        System.out.println();
+        System.out.println("Задание 3:");
+
+        Park park = new Park();
+        Park.Attraction attraction = park.new Attraction("Колесо обозрения", "9.00-22.00", 8.54);
+        attraction.printInfo2();
     }
 }
+
